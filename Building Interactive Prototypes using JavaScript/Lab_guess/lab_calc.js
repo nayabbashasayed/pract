@@ -31,5 +31,5 @@ for (i = 0; i < tries; i++) {
 }
 
 if (i == tries) {
-	window.alert("Ran out of tries");
+	window.alert("Ran out of tries. The number is: " + rand_num);
 }
