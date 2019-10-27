@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id = "box">
+			<h2 id="question">Question goes here</h2>
+			<input name = "option" type="radio" value="A"><span id = "choiceA">First option here</span><br/>
+			<input name = "option" type="radio" value="B"><span id = "choiceB">Second option here</span><br/>
+			<input name = "option" type="radio" value="C"><span id = "choiceC">Third option here</span><br/>
+			<input name = "option" type="radio" value="D"><span id = "choiceD">Fourth option here</span><br/>
+			<button id = "quesForm" type = "button">Submit</button>
+			<br/>
+			<p id = "quesNum"></p>
+		</div>
+		<div id = "retakeOrSubmit" hidden>
+			<p id = "correctAnsCount"></p>
+			<p id = "correctAnsIndex"></p>
+			<a id = "retake" href="#">Retake Quiz</a> or <a id = "submitQues" href="#">Submit Question</a>
+		</div>
+		<div id = "userNewQuestion" hidden>
+			<p> Please enter the Question and details here </p>
+			<input type = "text" id = "newQuestion">Enter question here<br/>
+			<input type = "text" id = "newOptionA">Enter option A here<br/>
+			<input type = "text" id = "newOptionB">Enter option B here<br/>
+			<input type = "text" id = "newOptionC">Enter option C here<br/>
+			<input type = "text" id = "newOptionD">Enter option D here<br/>
+			<br/>
+			<input type = "text" id = "correctAnswer">Enter Correct Anwer here<br/>
+			<button type = "button" id = "newQuesSubmit">Submit</button>
+		</div>
+		<script src = "lab_trivia.js"></script>
+	</body>
+</html>
