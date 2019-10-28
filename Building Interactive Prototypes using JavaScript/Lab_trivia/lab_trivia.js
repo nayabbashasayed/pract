@@ -79,11 +79,9 @@ function updateQuesToDefault() {
 		choiceD : newOptionD.value,
 		answer : correctAnswer.value
 	};
-	console.log(updateQuestion);
-	console.log(defQuestions.length);
 	defQuestions.push(updateQuestion);
-	console.log(defQuestions.length);
 	userNewQuestion.style.display = "none";
+	addToLocalStorage(updateQuestion);
 	retakeQuiz();
 }
 
@@ -103,6 +101,7 @@ function submitUserQuestion() {
 }
 
 function renderQuestion() {
+	console.log(defQuestions.length);
 	question.innerHTML = defQuestions[quesIndex].question;
 	choiceA.innerHTML = defQuestions[quesIndex].choiceA;
 	choiceB.innerHTML = defQuestions[quesIndex].choiceB;
@@ -140,7 +139,7 @@ function populateQuestion() {
 			correctAnsCount.innerHTML = "Total correct answers : "+ correctAnswerCount;
 			let i = 0;
 			for (i = 0; i < defQuestions.length; i++) {
-				correctAnsIndex.innerHTML +="Question num " + i +": "+ correctAnswerIndex[i] + "<br/>";
+				correctAnsIndex.innerHTML +="Question num " + (i + 1) +": "+ correctAnswerIndex[i] + "<br/>";
 			}
 			retakeOrSubmit.style.display = "block";
 			return true;
@@ -149,4 +148,26 @@ function populateQuestion() {
 	}
 }
 
+function checkLocalStorageQuestions() {
+	if (localStorage.getItem("localQuestions")) {
+		var storedQuestions = JSON.parse(localStorage.getItem("localQuestions"));
+		for (let i = 0; i < storedQuestions.length; i++) {
+			defQuestions.push(storedQuestions[i]);
+		}
+	}
+}
+
+function addToLocalStorage(updateQuestion) {
+	if (localStorage.getItem("localQuestions")) {
+		var getLocalQues = localStorage.getItem("localQuestions");
+		var localQuesParse = JSON.parse(getLocalQues);
+		localQuesParse.push(updateQuestion);
+		localStorage.setItem("localQuestions", JSON.stringify(localQuesParse));
+	} else {
+		var localQ = [];
+		localQ.push(updateQuestion);
+		localStorage.setItem("localQuestions", JSON.stringify(localQ));
+	}
+}
+checkLocalStorageQuestions();
 renderQuestion();
