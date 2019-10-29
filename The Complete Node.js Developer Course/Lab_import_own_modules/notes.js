@@ -1,7 +1,8 @@
-var notes = "Your notes ...";
-
-function getNotes() {
-	return notes;
+function getYourNotes() {
+	return "Your Notes ...";
 }
 
-module.exports = getNotes;
+function getMyNotes() {
+	return "My Notes ...";
+}
+module.exports = {getMyNotes, getYourNotes};
