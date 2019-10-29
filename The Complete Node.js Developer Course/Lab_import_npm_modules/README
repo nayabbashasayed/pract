@@ -1,0 +1,29 @@
+Initialize the project with `npm init`. This will create `package.json` file with the following content.
+
+```
+{
+  "name": "lab_import_npm_modules",
+  "version": "1.0.0",
+  "description": "Initialize the project with `npm init`",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+Let's download a npm module called `validator`. Go to `npmjs.com` and search for validator.
+
+From the documentation, install validator with the following command.
+
+```
+npm install validator
+```
+This will create `package-lock.json` file with npm module information.
+
+Import the `validator` module with following line.
+
+```
+validator = require('validator');
