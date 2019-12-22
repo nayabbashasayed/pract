@@ -1,5 +1,5 @@
-let calcGrade = (studentScore, totalPossibleScore) => {
-	let percentage = studentScore * 100 / totalPossibleScore;
+const calcGrade = (studentScore, totalPossibleScore) => {
+	const percentage = studentScore * 100 / totalPossibleScore;
 	let grade;
 
 	if (percentage >= 90 && percentage <= 100) {
@@ -16,4 +16,4 @@ let calcGrade = (studentScore, totalPossibleScore) => {
 	return `You got the grade ${grade} - (${percentage}%)!`;
 }
 
-console.log(calcGrade(12, 20));
+console.log(calcGrade(14, 20));
